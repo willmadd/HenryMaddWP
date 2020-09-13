@@ -1,0 +1,24 @@
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: $col-3;
+    @media (min-width: $desktop) {
+        flex-direction: row;
+      }
+      &.entry-header{
+        background-color: $primary;
+      }
+p{
+    text-align: center;
+    color: $col-7;
+    @media (min-width: $desktop) {
+        text-align: unset;;
+      }
+}
+h1 {
+  color:$smoke-black;
+}
+    
+}

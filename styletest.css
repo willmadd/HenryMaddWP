@@ -1,0 +1,563 @@
+@font-face {
+  font-family: "glacial_indifferenceregular";
+  src: url("./../fonts/glacialindifference-regular-webfont.woff2") format("woff2"), url("./../fonts/glacialindifference-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "norwesterregular";
+  src: url("./../fonts/norwester-webfont.woff2") format("woff2"), url("./../fonts/norwester-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "norwesterregular";
+  margin: 8px;
+  color: #211103;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+h2 {
+  font-size: 36px;
+}
+
+p {
+  font-family: "glacial_indifferenceregular";
+  margin: 8px;
+  color: #1B1D1F;
+  font-size: 18px;
+}
+
+a {
+  font-family: "glacial_indifferenceregular";
+  margin: 8px;
+  color: #1B1D1F;
+  color: inherit;
+  text-decoration: inherit;
+}
+
+li {
+  font-family: "glacial_indifferenceregular";
+}
+
+q, address {
+  font-family: "glacial_indifferenceregular";
+  font-style: italic;
+}
+
+.blue-cap {
+  color: #628395;
+  -webkit-text-stroke: 0.1px #211103;
+}
+
+.red-cap {
+  color: #B6174B;
+  -webkit-text-stroke: 0.1px #211103;
+}
+
+.orange-cap {
+  color: #1C6368;
+  -webkit-text-stroke: 0.1px #211103;
+}
+
+.white-cap {
+  color: #ffffff;
+  -webkit-text-stroke: 0.1px #211103;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #DFD5A5;
+}
+@media (min-width: 1024px) {
+  header {
+    flex-direction: row;
+  }
+}
+header p {
+  text-align: center;
+  color: #B6174B;
+}
+@media (min-width: 1024px) {
+  header p {
+    text-align: unset;
+  }
+}
+header h1 {
+  color: #211103;
+}
+
+.social-icons {
+  display: flex;
+  flex-direction: row;
+}
+.social-icons img {
+  height: 24px;
+}
+
+nav {
+  height: 0;
+  text-transform: uppercase;
+}
+@media (min-width: 1024px) {
+  nav {
+    display: flex;
+    height: auto;
+    background-color: #6E0E0A;
+    justify-content: space-evenly;
+    align-items: center;
+    position: sticky;
+    top: 0px;
+    z-index: 2;
+  }
+}
+nav h4 {
+  color: #ffffff;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+#menuToggle {
+  display: block;
+  position: relative;
+  top: 50px;
+  left: 50px;
+  z-index: 1;
+  font-family: "norwesterregular";
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  user-select: none;
+  width: calc(100vw - 50px);
+}
+@media (min-width: 1024px) {
+  #menuToggle {
+    top: 0;
+    left: 0;
+  }
+}
+
+#menuToggle input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  cursor: pointer;
+  opacity: 0;
+  /* hide this */
+  z-index: 2;
+  /* and place it over the hamburger */
+  -webkit-touch-callout: none;
+}
+@media (min-width: 1024px) {
+  #menuToggle input {
+    display: none;
+  }
+}
+
+/*
+   * Just a quick hamburger
+   */
+#menuToggle span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background: #cdcdcd;
+  border-radius: 3px;
+  z-index: 1;
+  transform-origin: 4px 0px;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+}
+@media (min-width: 1024px) {
+  #menuToggle span {
+    display: none;
+  }
+}
+
+#menuToggle span:first-child {
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+
+/* 
+   * Transform all the slices of hamburger
+   * into a crossmark.
+   */
+#menuToggle input:checked ~ span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #ffffff;
+}
+
+/*
+   * But let's hide the middle one.
+   */
+#menuToggle input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+   * Ohyeah and the last one should go the other direction
+   */
+#menuToggle input:checked ~ span:nth-last-child(2) {
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
+   * Make this absolute positioned
+   * at the top left of the screen
+   */
+#menu {
+  position: absolute;
+  width: 300px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  box-sizing: border-box;
+  padding-bottom: 36px;
+  background: #1B1D1F;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  width: 100vw;
+  /* to stop flickering of text in safari */
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+@media (min-width: 1024px) {
+  #menu {
+    width: 100vw;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    color: #ffffff;
+    align-items: center;
+    transform: translate(0, 0);
+    background-color: inherit;
+  }
+}
+
+#menu li {
+  padding: 10px 0;
+  font-size: 22px;
+  color: #ffffff;
+}
+@media (min-width: 1024px) {
+  #menu li {
+    margin: 20px;
+    display: flex;
+  }
+}
+
+/*
+   * And let's slide it in from the left
+   */
+#menuToggle input:checked ~ ul {
+  transform: none;
+}
+
+.home-nav {
+  text-align: center;
+  color: #ffffff;
+}
+@media (min-width: 1024px) {
+  .home-nav {
+    margin-right: auto;
+    margin-left: 40px;
+  }
+}
+
+footer {
+  width: 100%;
+  background-color: #1C6368;
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .head-image {
+  width: 100%;
+  height: auto;
+}
+main .green-back {
+  min-height: 275px;
+  background-color: #628395;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 250px;
+  width: 100%;
+}
+main .henry-about-me {
+  padding: 16px;
+  border: 2px solid #ffffff;
+  margin: 16px;
+  border-radius: 16px;
+}
+main .henry-about-me p {
+  color: #ffffff;
+}
+main .quote-wrapper {
+  justify-self: end;
+  align-self: center;
+}
+main h2.quote {
+  font-style: italic;
+  opacity: 0.5;
+  color: #ffffff;
+  font-size: 22px;
+  line-height: 26px;
+  letter-spacing: 1px;
+}
+main .orange-back {
+  background: #96897B;
+}
+main .section {
+  padding-top: 0;
+}
+main .section.news {
+  margin-top: 36px;
+}
+@media (min-width: 1024px) {
+  main .section.news {
+    grid-area: news;
+    margin-top: 0;
+  }
+}
+main .section h1 {
+  text-align: center;
+  margin: 24px;
+}
+main .live-events {
+  padding: 16px;
+  box-sizing: border-box;
+}
+main .live-events .when ul {
+  padding-left: 0;
+}
+main .live-events .when ul li {
+  list-style: none;
+}
+main .live-events .live-events-lower {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-bottom: 40px;
+}
+main .live-events .live-events-lower img {
+  width: 100%;
+}
+main .contact {
+  background: #D4BD52;
+}
+main .gallery {
+  width: 100%;
+  min-height: 200px;
+  margin-top: 48px;
+}
+main .grid-item {
+  width: calc(25vw - 7px);
+}
+main .grid-item--width2 {
+  width: calc(50vw - 7px);
+}
+main .grid-item img {
+  width: 100%;
+}
+main .education {
+  background: #1C6368;
+  padding: 16px;
+  box-sizing: border-box;
+  padding-bottom: 40px;
+}
+main .education p,
+main .education q {
+  color: #ffffff;
+}
+main .rex {
+  background: #ffffff;
+  padding: 16px;
+  box-sizing: border-box;
+  padding-bottom: 40px;
+  margin-top: 0;
+}
+@media (min-width: 1024px) {
+  main .grid-top {
+    display: grid;
+    grid-template-areas: "news about" "news events";
+    grid-template-columns: 360px 1fr;
+    width: 100%;
+  }
+}
+@media (min-width: 1024px) {
+  main .about.green-back {
+    grid-area: about;
+  }
+}
+@media (min-width: 1024px) {
+  main .live-events {
+    grid-area: events;
+  }
+}
+main .media .link-content {
+  display: grid;
+  grid-gap: 10px;
+  padding-left: 0;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 1024px) {
+  main .media .link-content {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+main .media .link-content a {
+  color: #1C6368;
+  text-decoration: underline;
+  font-size: 22px;
+  color: #ffffff;
+}
+main .media .link-content .media-link {
+  position: relative;
+  min-height: 180px;
+  z-index: 1;
+  display: flex;
+  align-items: flex-end;
+}
+main .media .link-content .media-link:before {
+  content: "";
+  background-size: cover;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.4;
+}
+main .media .link-content .media-link:hover {
+  animation-duration: 0.3s;
+  animation-name: blur-hover;
+}
+main .media .link-content .the-blue-nib:before {
+  background-image: url("../images/henry-bridge.jpg");
+}
+main .media .link-content .canterbury-culture:before {
+  background-image: url("../images/canterbury-culture.jpg");
+}
+main .media .link-content .the-forest-review:before {
+  background-image: url("../images/forest-review.jpg");
+}
+main .media .link-content .media-link {
+  list-style: none;
+  border: 2px solid #1B1D1F;
+  border-radius: 5px;
+}
+
+.news {
+  background-color: #DFD5A5;
+  padding: 16px;
+  box-sizing: border-box;
+  padding-bottom: 40px;
+}
+.news .wp-post {
+  position: relative;
+}
+.news .postlist {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 24px;
+}
+@media (min-width: 1024px) {
+  .news .postlist {
+    grid-template-columns: 1fr;
+  }
+}
+.news .postlist img {
+  width: 100%;
+  object-fit: cover;
+  height: 300px;
+  border: 1px solid #1B1D1F;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+.news .postlist img:hover {
+  transition: 0.25s;
+  box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.1), 0 0px 0px 0 rgba(0, 0, 0, 0.06);
+}
+.news .text-post {
+  background-color: #B6174B;
+  padding: 12px;
+  border-radius: 3px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  /* margin-top: -30px; */
+  position: absolute;
+  bottom: 6%;
+  left: 6%;
+  border: 1px solid #1B1D1F;
+}
+
+.btn-6 {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  max-width: 250px;
+  text-transform: uppercase;
+  border: 1px solid currentColor;
+  opacity: 0.99;
+}
+.btn-6 span {
+  display: block;
+  border-radius: 50%;
+  background-color: #CF995F;
+  transition: width 0.4s ease-in-out, height 0.4s ease-in-out;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+.btn-6:hover {
+  transition: 1s;
+  transition-timing-function: cubic-bezier(0.1, 0.7, 1, 0.1);
+}
+.btn-6:hover p,
+.btn-6:hover h4 {
+  color: #ffffff;
+}
+@keyframes blur-hover {
+  0% {
+    filter: blur(0px);
+  }
+  50% {
+    filter: blur(1px);
+  }
+  100% {
+    filter: blur(0px);
+  }
+}
+
+/*# sourceMappingURL=styletest.css.map */

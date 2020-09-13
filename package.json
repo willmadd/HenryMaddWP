@@ -1,0 +1,24 @@
+{
+  "name": "henrymaddicott",
+  "version": "1.0.0",
+  "description": "henry maddicott website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass --watch scss -o css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/willmadd/henrymadd.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/willmadd/henrymadd/issues"
+  },
+  "homepage": "https://github.com/willmadd/henrymadd#readme",
+  "dependencies": {
+    "breakpoint-sass": "^2.7.1",
+    "node-sass": "^4.13.0"
+  }
+}
