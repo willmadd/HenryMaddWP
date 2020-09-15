@@ -21,6 +21,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="description" content="Henry Madd is a spoken word artist, theatre maker and workshop facilitator. After cutting his teeth on the Californian poetry circuit he returned to his native England and firmly entrenched"/>
     <title>
       Henry Madd | Spoken Word Artist | Theatre Maker | Workshop Facilitator
     </title>
@@ -242,6 +243,7 @@
 
       <div
         class="gallery"
+        id="gallery"
         data-aos="zoom-up"
         data-aos-duration="1000"
         data-aos-easing="ease-in-out"
