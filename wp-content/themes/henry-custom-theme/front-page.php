@@ -2,18 +2,18 @@
 <html lang="en">
   <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <!-- <script
+    <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=UA-152879632-1"
-    ></script> -->
+    ></script>
     <script>
-      // window.dataLayer = window.dataLayer || [];
-      // function gtag() {
-      //   dataLayer.push(arguments);
-      // }
-      // gtag("js", new Date());
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-      // gtag("config", "UA-152879632-1");
+      gtag("config", "UA-152879632-1");
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
